@@ -1,0 +1,132 @@
+// Declared variables
+$border-color:  #b3b3b3;
+$light-background-color: #f9f9f9;
+$header-background: #999999;
+
+// main styles
+body {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  background: url("/images/blankbackground.png");
+}
+
+nav {
+  position: relative;
+  z-index: 97;
+  height: 48px;
+  background-color: #343434;
+  padding: 0;
+  margin: 0;
+  top: 0px;
+  line-height: 45px;
+  border: none;
+}
+
+//navbar
+.navbar {
+  margin: 0px;
+  border-radius: 0px;
+  a {
+    color: #fff;
+  }
+}
+
+.nav>li>a:hover {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.navbar-brand > a {
+  height: 48px;
+  text-indent: -9000px;
+  overflow: hidden;
+  display: block;
+  color: #fff;
+  background: url("/images/pipedrive_logo.png") 12px 12px no-repeat!important;
+  background-size: 106px 24px;
+}
+
+.page-content-wrapper {
+  width: 100%;
+}
+
+.content-container-header {
+  height: 58px;
+}
+
+.profile-info {
+  background-color: green;
+}
+
+.profile-deals {
+  background-color: red;
+}
+
+.sidebar-wrapper {
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  background: #fff;
+  position: fixed;
+  height: 100%;
+  z-index: 1000;
+  border-right: solid 1px gray;
+
+  .sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar-item {
+    background-color: $light-background-color;
+    border-bottom: solid 1px $border-color;
+    border-right: solid 1px $border-color;
+    color: #000;
+    a {
+      padding: 15px;
+      display: block;
+      color: black;
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+
+      &:hover {
+        color: #fff !important;
+        background-color: #368CCE;
+      }
+    }
+  }
+}
+
+.page-content-wrapper {
+  width: 100%;
+}
+
+.wrapper {
+  padding-left: 250px;
+  overflow: hidden;
+}
+
+.middle-area {
+  background-color: #fff;
+  min-height: 200px;
+  border: solid 1px $border-color;
+}
+
+.deals-heading {
+  background-color: $light-background-color;
+}
+.panel-deals {
+  margin: 20px;
+}
+
+.table-profile>tbody>tr>td{
+  border: none;
+}
+.table-profile {
+  margin: 10px;
+}

@@ -1,0 +1,146 @@
+/* line 7, ../sass/style.scss */
+body {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  background: url("/images/blankbackground.png");
+}
+
+/* line 14, ../sass/style.scss */
+nav {
+  position: relative;
+  z-index: 97;
+  height: 48px;
+  background-color: #343434;
+  padding: 0;
+  margin: 0;
+  top: 0px;
+  line-height: 45px;
+  border: none;
+}
+
+/* line 27, ../sass/style.scss */
+.navbar {
+  margin: 0px;
+  border-radius: 0px;
+}
+/* line 30, ../sass/style.scss */
+.navbar a {
+  color: #fff;
+}
+
+/* line 35, ../sass/style.scss */
+.nav > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* line 39, ../sass/style.scss */
+.navbar-brand > a {
+  height: 48px;
+  text-indent: -9000px;
+  overflow: hidden;
+  display: block;
+  color: #fff;
+  background: url("/images/pipedrive_logo.png") 12px 12px no-repeat !important;
+  background-size: 106px 24px;
+}
+
+/* line 49, ../sass/style.scss */
+.page-content-wrapper {
+  width: 100%;
+}
+
+/* line 53, ../sass/style.scss */
+.content-container-header {
+  height: 58px;
+}
+
+/* line 57, ../sass/style.scss */
+.profile-info {
+  background-color: green;
+}
+
+/* line 61, ../sass/style.scss */
+.profile-deals {
+  background-color: red;
+}
+
+/* line 65, ../sass/style.scss */
+.sidebar-wrapper {
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  background: #fff;
+  position: fixed;
+  height: 100%;
+  z-index: 1000;
+  border-right: solid 1px gray;
+}
+/* line 75, ../sass/style.scss */
+.sidebar-wrapper .sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 84, ../sass/style.scss */
+.sidebar-wrapper .sidebar-item {
+  background-color: #f9f9f9;
+  border-bottom: solid 1px #b3b3b3;
+  border-right: solid 1px #b3b3b3;
+  color: #000;
+}
+/* line 89, ../sass/style.scss */
+.sidebar-wrapper .sidebar-item a {
+  padding: 15px;
+  display: block;
+  color: black;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+/* line 97, ../sass/style.scss */
+.sidebar-wrapper .sidebar-item a:hover {
+  color: #fff !important;
+  background-color: #368CCE;
+}
+
+/* line 105, ../sass/style.scss */
+.page-content-wrapper {
+  width: 100%;
+}
+
+/* line 109, ../sass/style.scss */
+.wrapper {
+  padding-left: 250px;
+  overflow: hidden;
+}
+
+/* line 114, ../sass/style.scss */
+.middle-area {
+  background-color: #fff;
+  min-height: 200px;
+  border: solid 1px #b3b3b3;
+}
+
+/* line 120, ../sass/style.scss */
+.deals-heading {
+  background-color: #f9f9f9;
+}
+
+/* line 123, ../sass/style.scss */
+.panel-deals {
+  margin: 20px;
+}
+
+/* line 127, ../sass/style.scss */
+.table-profile > tbody > tr > td {
+  border: none;
+}
+
+/* line 130, ../sass/style.scss */
+.table-profile {
+  margin: 10px;
+}
