@@ -3,6 +3,71 @@ $border-color:  #b3b3b3;
 $light-border-color: #CECECE;
 $light-background-color: #f9f9f9;
 $header-background: #999999;
+$active-color: #26292c;
+$pipedrive-gray: #c2c8cd;
+$notification-red: #DD0000;
+
+
+
+
+// Declared headings
+
+h1 {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+h4 {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: gray;
+}
+p {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+blockquote {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+pre {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714px;
+}
 
 // main styles
 body {
@@ -24,10 +89,25 @@ nav {
   border: none;
 }
 
+.background-logo {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  left: 15%;
+  top: 15%;
+  z-index: -1;
+  background: url("/images/background.png");
+}
+
 //navbar
 .navbar {
+  height: 48px;
   margin: 0px;
   border-radius: 0px;
+  overflow: hidden;
+  .container-fluid {
+    padding-right: 0px;
+  }
   a {
     font-weight: bold;
     color: #fff;
@@ -36,6 +116,14 @@ nav {
 
 .nav>li>a:hover {
   background-color: rgba(255, 255, 255, .2);
+  transition: background-color 0.2s ease;
+}
+.nav>li>a:focus,  {
+  background-color: $active-color;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+  background-color: $active-color;
+  border-color: $active-color;
 }
 
 .navbar-brand {
@@ -49,63 +137,62 @@ nav {
 }
 
 .user-img {
+  margin-top: -15px;
   height: 48px;
   width: 48px;
   display: block;
-  float:left;
-  background: url("/images/user.png") no-repeat!important;
+  float: left;
+  margin-right: 2px;
+  background: url("/images/user.png") center no-repeat !important;
 }
 
 .icon-deals {
+  margin-top: -15px;;
   height: 48px;
   width: 48px;
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/connection.png") no-repeat!important;
+  background: url("/images/connection.png") center no-repeat!important;
 }
 
 .icon-activities {
+  margin-top: -15px;
   height: 48px;
   width: 48px;
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/calendar.png") no-repeat!important;
+  background: url("/images/calendar.png") center no-repeat!important;
 }
 
 .icon-cube {
+  margin-top: -15px;
   height: 48px;
   width: 48px;
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/cube.png") no-repeat!important;
+  background: url("/images/cube.png") center no-repeat!important;
 }
 
 .icon-profile {
+  margin-top: -15px;
   height: 48px;
   width: 48px;
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/user.png") no-repeat!important;
+  background: url("/images/user.png") center no-repeat!important;
 }
 
-.page-content-wrapper {
-  width: 100%;
-}
 
 .content-container-header {
   height: 58px;
 }
 
-.profile-info {
-  background-color: green;
-}
-
-.profile-deals {
-  background-color: red;
+.company-name {
+  display: block;
 }
 
 .sidebar-wrapper {
@@ -133,8 +220,9 @@ nav {
     border-bottom: solid 1px $border-color;
     border-right: solid 1px $border-color;
     color: #000;
+    word-wrap: break-word;
     a {
-      padding: 15px;
+      padding: 10px;
       display: block;
       color: black;
       height: 100%;
@@ -143,7 +231,12 @@ nav {
 
       &:hover {
         color: #fff !important;
-        background-color: #368CCE;
+        background: #4CA2DE; /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(#4CA2DE, #287BC4); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(#4CA2DE, #287BC4); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#4CA2DE, #287BC4); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(#4CA2DE, #287BC4); /* Standard syntax (must be last) */
+        transition: background-color 0.5s ease;
       }
     }
   }
@@ -151,6 +244,9 @@ nav {
 
 .page-content-wrapper {
   width: 100%;
+  .container {
+    margin-left:30px;
+  }
 }
 
 .wrapper {
@@ -161,7 +257,7 @@ nav {
   background-color: #fff;
   min-height: 200px;
   border: solid 1px $light-border-color;
-  box-shadow: 2px 2px rgba(90, 90, 90, .1);
+  box-shadow: 0px 2px rgba(90, 90, 90, .2);
 }
 
 .deals-heading {
@@ -180,4 +276,59 @@ nav {
 
 .deals {
   height: 50px;
+}
+
+.dropdown-toggle {
+  height: 50px;
+}
+
+.company-name {
+  font-size: 11px;
+  color: $pipedrive-gray;
+}
+
+.user-info {
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-top: -10px;
+}
+
+.caret {
+  position: absolute;
+  right: 5px;
+  top: 23px;
+  color: $pipedrive-gray;
+}
+
+.sidebar-company {
+  color: gray;
+  display: block;
+}
+
+.table-striped {
+  box-shadow: 2px 2px rgba(90, 90, 90, .2);
+}
+
+.current-date {
+  float: left;
+  color: #000;
+  margin-left: -31px;
+  margin-top: -20px;
+  text-align: center;
+}
+
+.notifications {
+  margin-top: -34px;
+  margin-left: 29px;
+  min-width: 18px;
+  height: 18px;
+  background-color: #dd0000;
+  border-radius: 3px;
+  z-index: 50;
+  position: absolute;
+  text-align: center;
+  font-size: 10;
+  .notifications-number {
+  color: #fff;
+  }
 }

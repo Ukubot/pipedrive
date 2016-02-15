@@ -1,4 +1,71 @@
-/* line 8, ../sass/style.scss */
+/* line 15, ../sass/style.scss */
+h1 {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* line 26, ../sass/style.scss */
+h3 {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* line 36, ../sass/style.scss */
+h4 {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: gray;
+}
+
+/* line 47, ../sass/style.scss */
+p {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* line 55, ../sass/style.scss */
+blockquote {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+/* line 63, ../sass/style.scss */
+pre {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714px;
+}
+
+/* line 73, ../sass/style.scss */
 body {
   margin: 0px;
   padding: 0px;
@@ -6,7 +73,7 @@ body {
   background: url("/images/blankbackground.png");
 }
 
-/* line 15, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 nav {
   position: relative;
   z-index: 97;
@@ -19,23 +86,52 @@ nav {
   border: none;
 }
 
-/* line 28, ../sass/style.scss */
+/* line 92, ../sass/style.scss */
+.background-logo {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  left: 15%;
+  top: 15%;
+  z-index: -1;
+  background: url("/images/background.png");
+}
+
+/* line 103, ../sass/style.scss */
 .navbar {
+  height: 48px;
   margin: 0px;
   border-radius: 0px;
+  overflow: hidden;
 }
-/* line 31, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
+.navbar .container-fluid {
+  padding-right: 0px;
+}
+/* line 111, ../sass/style.scss */
 .navbar a {
   font-weight: bold;
   color: #fff;
 }
 
-/* line 37, ../sass/style.scss */
+/* line 117, ../sass/style.scss */
 .nav > li > a:hover {
   background-color: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.2s ease;
 }
 
-/* line 41, ../sass/style.scss */
+/* line 121, ../sass/style.scss */
+.nav > li > a:focus {
+  background-color: #26292c;
+}
+
+/* line 124, ../sass/style.scss */
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+  background-color: #26292c;
+  border-color: #26292c;
+}
+
+/* line 129, ../sass/style.scss */
 .navbar-brand {
   height: 48px;
   width: 122px;
@@ -46,76 +142,72 @@ nav {
   background-size: 106px 24px;
 }
 
-/* line 51, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .user-img {
+  margin-top: -15px;
   height: 48px;
   width: 48px;
   display: block;
   float: left;
-  background: url("/images/user.png") no-repeat !important;
+  margin-right: 2px;
+  background: url("/images/user.png") center no-repeat !important;
 }
 
-/* line 59, ../sass/style.scss */
+/* line 149, ../sass/style.scss */
 .icon-deals {
+  margin-top: -15px;
   height: 48px;
   width: 48px;
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/connection.png") no-repeat !important;
+  background: url("/images/connection.png") center no-repeat !important;
 }
 
-/* line 68, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 .icon-activities {
+  margin-top: -15px;
   height: 48px;
   width: 48px;
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/calendar.png") no-repeat !important;
+  background: url("/images/calendar.png") center no-repeat !important;
 }
 
-/* line 77, ../sass/style.scss */
+/* line 169, ../sass/style.scss */
 .icon-cube {
+  margin-top: -15px;
   height: 48px;
   width: 48px;
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/cube.png") no-repeat !important;
+  background: url("/images/cube.png") center no-repeat !important;
 }
 
-/* line 86, ../sass/style.scss */
+/* line 179, ../sass/style.scss */
 .icon-profile {
+  margin-top: -15px;
   height: 48px;
   width: 48px;
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/user.png") no-repeat !important;
+  background: url("/images/user.png") center no-repeat !important;
 }
 
-/* line 95, ../sass/style.scss */
-.page-content-wrapper {
-  width: 100%;
-}
-
-/* line 99, ../sass/style.scss */
+/* line 190, ../sass/style.scss */
 .content-container-header {
   height: 58px;
 }
 
-/* line 103, ../sass/style.scss */
-.profile-info {
-  background-color: green;
+/* line 194, ../sass/style.scss */
+.company-name {
+  display: block;
 }
 
-/* line 107, ../sass/style.scss */
-.profile-deals {
-  background-color: red;
-}
-
-/* line 111, ../sass/style.scss */
+/* line 198, ../sass/style.scss */
 .sidebar-wrapper {
   margin-left: -250px;
   left: 250px;
@@ -127,7 +219,7 @@ nav {
   border-right: solid 1px #cecece;
   box-shadow: 1px 0px rgba(90, 90, 90, 0.1);
 }
-/* line 122, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 .sidebar-wrapper .sidebar-nav {
   position: absolute;
   top: 0;
@@ -136,67 +228,146 @@ nav {
   margin: 0;
   padding: 0;
 }
-/* line 131, ../sass/style.scss */
+/* line 218, ../sass/style.scss */
 .sidebar-wrapper .sidebar-item {
   background-color: #f9f9f9;
   border-bottom: solid 1px #b3b3b3;
   border-right: solid 1px #b3b3b3;
   color: #000;
+  word-wrap: break-word;
 }
-/* line 136, ../sass/style.scss */
+/* line 224, ../sass/style.scss */
 .sidebar-wrapper .sidebar-item a {
-  padding: 15px;
+  padding: 10px;
   display: block;
   color: black;
   height: 100%;
   width: 100%;
   text-decoration: none;
 }
-/* line 144, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 .sidebar-wrapper .sidebar-item a:hover {
   color: #fff !important;
-  background-color: #368CCE;
+  background: #4CA2DE;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#4ca2de, #287bc4);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#4ca2de, #287bc4);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#4ca2de, #287bc4);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#4ca2de, #287bc4);
+  /* Standard syntax (must be last) */
+  transition: background-color 0.5s ease;
 }
 
-/* line 152, ../sass/style.scss */
+/* line 245, ../sass/style.scss */
 .page-content-wrapper {
   width: 100%;
 }
+/* line 247, ../sass/style.scss */
+.page-content-wrapper .container {
+  margin-left: 30px;
+}
 
-/* line 156, ../sass/style.scss */
+/* line 252, ../sass/style.scss */
 .wrapper {
   padding-left: 250px;
 }
 
-/* line 160, ../sass/style.scss */
+/* line 256, ../sass/style.scss */
 .middle-area {
   background-color: #fff;
   min-height: 200px;
   border: solid 1px #cecece;
-  box-shadow: 2px 2px rgba(90, 90, 90, 0.1);
+  box-shadow: 0px 2px rgba(90, 90, 90, 0.2);
 }
 
-/* line 167, ../sass/style.scss */
+/* line 263, ../sass/style.scss */
 .deals-heading {
   background-color: #f9f9f9;
 }
 
-/* line 170, ../sass/style.scss */
+/* line 266, ../sass/style.scss */
 .panel-deals {
   margin: 20px;
 }
 
-/* line 174, ../sass/style.scss */
+/* line 270, ../sass/style.scss */
 .table-profile > tbody > tr > td {
   border: none;
 }
 
-/* line 177, ../sass/style.scss */
+/* line 273, ../sass/style.scss */
 .table-profile {
   margin: 10px;
 }
 
-/* line 181, ../sass/style.scss */
+/* line 277, ../sass/style.scss */
 .deals {
   height: 50px;
+}
+
+/* line 281, ../sass/style.scss */
+.dropdown-toggle {
+  height: 50px;
+}
+
+/* line 285, ../sass/style.scss */
+.company-name {
+  font-size: 11px;
+  color: #c2c8cd;
+}
+
+/* line 290, ../sass/style.scss */
+.user-info {
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-top: -10px;
+}
+
+/* line 296, ../sass/style.scss */
+.caret {
+  position: absolute;
+  right: 5px;
+  top: 23px;
+  color: #c2c8cd;
+}
+
+/* line 303, ../sass/style.scss */
+.sidebar-company {
+  color: gray;
+  display: block;
+}
+
+/* line 308, ../sass/style.scss */
+.table-striped {
+  box-shadow: 2px 2px rgba(90, 90, 90, 0.2);
+}
+
+/* line 312, ../sass/style.scss */
+.current-date {
+  float: left;
+  color: #000;
+  margin-left: -31px;
+  margin-top: -20px;
+  text-align: center;
+}
+
+/* line 320, ../sass/style.scss */
+.notifications {
+  margin-top: -34px;
+  margin-left: 29px;
+  min-width: 18px;
+  height: 18px;
+  background-color: #dd0000;
+  border-radius: 3px;
+  z-index: 50;
+  position: absolute;
+  text-align: center;
+  font-size: 10;
+}
+/* line 331, ../sass/style.scss */
+.notifications .notifications-number {
+  color: #fff;
 }

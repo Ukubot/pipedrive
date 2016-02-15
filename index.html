@@ -1,30 +1,17 @@
 <html>
 <head>
-<style type="text/css"> {
-  font-family: "Lucida Grande";
-  src: url("http://ufonts.com/q175265") format("truetype");
-}
-</style>
-<link type="text/css" href= "style/css/bootstrap.min.css" rel="stylesheet" />
-<link type="text/css" href= "style/css/style.css" rel="stylesheet" />
+  <link type="text/css" href= "style/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href= "style/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
   <nav class="navbar">
     <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
         <a class="navbar-brand" href="#"></a>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li>
             <a class="deals" href="#">
@@ -36,6 +23,8 @@
             <a class="deals" href="#">
               <span class="icon-activities"></span>
               <span>Activities</span>
+              <span class="current-date">20</span>
+              <div class="notifications">2</div>
             </a>
           </li>
           <li>
@@ -52,119 +41,131 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Uku Saarm <span class="user-img"></span><span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="user-img"></span>
 
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-  <div class="wrapper">
-    <div class="row">
-      <div class="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li class="sidebar-item"><a href="#"><b>Jurgen</b></a></li>
-          <li class="sidebar-item"><a href="#"><b>K. La Mees</b></a></li>
-          <li class="sidebar-item"><a href="#"><b>Henrius Maximus</b></a></li>
-          <li class="sidebar-item"><a href="#"><b>Martin Meelitaja</b></a></li>
-          <li class="sidebar-item"><a href="#"><b>Abrak Adabra</b></a></li>
-        </ul>
-      </div>
-
-      <div class="page-content-wrapper">
-        <div class="page content">
-          <div class="container">
-            <div class="row">
-              <div class="content-container-header">
-                <div class="profile-info">
-                  <div class="col-lg-5">
-                    <h3>Uku Saarm</h3>
-                  </div>
+              <div class="user-info">
+                <span class="username">Uku Saarm<span>
+                  <span class="company-name">Home</span>
                 </div>
-                <div class="profile-info">
-                  <div class="col-lg-5">
-                    <h3>Deals</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
+                <span class="caret"></span>
+              </a>
 
-            <div class="middle-area">
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="wrapper">
+      <div class="row">
+        <div class="sidebar-wrapper">
+          <ul class="sidebar-nav">
+            <li class="sidebar-item"><a href="#"><b>Jurgen</b><span class="sidebar-company">Amet</span></a></li>
+            <li class="sidebar-item"><a href="#"><b>K. La Mees</b><span class="sidebar-company">Amet</span></a></li>
+            <li class="sidebar-item"><a href="#"><b>Henrius Maximus</b><span class="sidebar-company">Amet</span></a></li>
+            <li class="sidebar-item"><a href="#"><b>Martin Meelitaja</b><span class="sidebar-company">Amet</span></a></li>
+            <li class="sidebar-item"><a href="#"><b>Abrak Adabra</b><span class="sidebar-company">Amet</span></a></li>
+          </ul>
+        </div>
+
+        <div class="page-content-wrapper">
+          <div class="page content">
+            <div class="container">
               <div class="row">
-                <div class="profile-info">
-                  <div class="col-lg-5">
-                    <table class="table table-profile">
-                      <tr>
-                        <td><b>Phone</b></td>
-                        <td>+372 5668 4334</td>
-                      </tr>
-                      <tr>
-                        <td><b>E-mail</b></td>
-                        <td>sample@email.com</td>
-                      </tr>
-                      <tr>
-                        <td><b>Added</b></td>
-                        <td>Feb 15, 2016</td>
-                      </tr>
-                      <tr>
-                        <td><b>Open deals</b></td>
-                        <td>2</td>
-                      </tr>
-                      <tr>
-                        <td><b>Next activity</b></td>
-                        <td>Call, tomorrow 14:30</td>
-                      </tr>
-                      <tr>
-                        <td><b>Last activity</b></td>
-                        <td>Meeting, 2 months ago</td>
-                      </tr>
-                    </table>
+                <div class="content-container-header">
+                  <div class="profile-info">
+                    <div class="col-lg-6">
+                      <h1><b>Uku Saarm</b></h1>
+                    </div>
                   </div>
-                </div>
-
-                <div class="profile-deals">
-                  <div class="col-lg-5">
-                    <div class="panel panel-default panel-deals">
-                      <table class="table table-striped">
-                        <tr class="deals-heading">
-                          <th><b>title</b></th>
-                          <th>sum</th>
-                        </tr>
-                        <tr>
-                          <td><b>Phone</b></td>
-                          <td>+372 5668 4334</td>
-                        </tr>
-                        <tr>
-                          <td><b>E-mail</b></td>
-                          <td>sample@email.com</td>
-                        </tr>
-                      </table>
-
+                  <div class="profile-info">
+                    <div class="col-lg-6 hidden-md hidden-sm hidden-xs">
+                      <h1>Deals</h1>
                     </div>
                   </div>
                 </div>
+              </div>
 
+              <div class="background-logo">
+              </div>
+
+              <div class="middle-area">
+                <div class="row">
+                  <div class="profile-info">
+                    <div class="col-lg-6">
+                      <table class="table table-profile">
+                        <tr>
+                          <td><h3><b>Phone</b></h3></td>
+                          <td><h3>+372 5668 4334</h3></td>
+                        </tr>
+                        <tr>
+                          <td><h3><b>E-mail</b></h3></td>
+                          <td><h3>sample@email.com</h3></td>
+                        </tr>
+                        <tr>
+                          <td><h3><b>Added</b></h3></td>
+                          <td><h3>Feb 15, 2016</h3></td>
+                        </tr>
+                        <tr>
+                          <td><h3><b>Open deals</b></td>
+                            <td><h3>2</h3></td>
+                          </tr>
+                          <tr>
+                            <td><h3><b>Next activity</b></h3></td>
+                            <td><h3>Call, tomorrow 14:30</h3></td>
+                          </tr>
+                          <tr>
+                            <td><h3><b>Last activity</b></h3></td>
+                            <td><h3>Meeting, 2 months ago</h3></td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div class="profile-deals">
+                      <div class="col-lg-6">
+                        <div class="panel panel-default panel-deals">
+                          <table class="table table-striped">
+                            <tr class="deals-heading">
+                              <th><h4>Title </h4></th>
+                              <th><h4 align="right">sum</h4></th>
+                            </tr>
+                            <tr>
+                              <td><h3>Phone</h3></td>
+                              <td><h3 align="right">+372 5668 4334</h3></td>
+                            </tr>
+                            <tr>
+                              <td><h3>E-mail</h3></td>
+                              <td><h3 align="right">sample@email.com</h3></td>
+                            </tr>
+                          </table>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
 
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="bower_components/underscore/underscore.js"></script>
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="bower_components/underscore/underscore.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>
