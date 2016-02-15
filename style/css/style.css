@@ -1,4 +1,4 @@
-/* line 7, ../sass/style.scss */
+/* line 8, ../sass/style.scss */
 body {
   margin: 0px;
   padding: 0px;
@@ -6,7 +6,7 @@ body {
   background: url("/images/blankbackground.png");
 }
 
-/* line 14, ../sass/style.scss */
+/* line 15, ../sass/style.scss */
 nav {
   position: relative;
   z-index: 97;
@@ -19,25 +19,26 @@ nav {
   border: none;
 }
 
-/* line 27, ../sass/style.scss */
+/* line 28, ../sass/style.scss */
 .navbar {
   margin: 0px;
   border-radius: 0px;
 }
-/* line 30, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
 .navbar a {
+  font-weight: bold;
   color: #fff;
 }
 
-/* line 35, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .nav > li > a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 39, ../sass/style.scss */
-.navbar-brand > a {
+/* line 41, ../sass/style.scss */
+.navbar-brand {
   height: 48px;
-  text-indent: -9000px;
+  width: 122px;
   overflow: hidden;
   display: block;
   color: #fff;
@@ -45,27 +46,76 @@ nav {
   background-size: 106px 24px;
 }
 
-/* line 49, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
+.user-img {
+  height: 48px;
+  width: 48px;
+  display: block;
+  float: left;
+  background: url("/images/user.png") no-repeat !important;
+}
+
+/* line 59, ../sass/style.scss */
+.icon-deals {
+  height: 48px;
+  width: 48px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  background: url("/images/connection.png") no-repeat !important;
+}
+
+/* line 68, ../sass/style.scss */
+.icon-activities {
+  height: 48px;
+  width: 48px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  background: url("/images/calendar.png") no-repeat !important;
+}
+
+/* line 77, ../sass/style.scss */
+.icon-cube {
+  height: 48px;
+  width: 48px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  background: url("/images/cube.png") no-repeat !important;
+}
+
+/* line 86, ../sass/style.scss */
+.icon-profile {
+  height: 48px;
+  width: 48px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  background: url("/images/user.png") no-repeat !important;
+}
+
+/* line 95, ../sass/style.scss */
 .page-content-wrapper {
   width: 100%;
 }
 
-/* line 53, ../sass/style.scss */
+/* line 99, ../sass/style.scss */
 .content-container-header {
   height: 58px;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 103, ../sass/style.scss */
 .profile-info {
   background-color: green;
 }
 
-/* line 61, ../sass/style.scss */
+/* line 107, ../sass/style.scss */
 .profile-deals {
   background-color: red;
 }
 
-/* line 65, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 .sidebar-wrapper {
   margin-left: -250px;
   left: 250px;
@@ -74,9 +124,10 @@ nav {
   position: fixed;
   height: 100%;
   z-index: 1000;
-  border-right: solid 1px gray;
+  border-right: solid 1px #cecece;
+  box-shadow: 1px 0px rgba(90, 90, 90, 0.1);
 }
-/* line 75, ../sass/style.scss */
+/* line 122, ../sass/style.scss */
 .sidebar-wrapper .sidebar-nav {
   position: absolute;
   top: 0;
@@ -85,14 +136,14 @@ nav {
   margin: 0;
   padding: 0;
 }
-/* line 84, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 .sidebar-wrapper .sidebar-item {
   background-color: #f9f9f9;
   border-bottom: solid 1px #b3b3b3;
   border-right: solid 1px #b3b3b3;
   color: #000;
 }
-/* line 89, ../sass/style.scss */
+/* line 136, ../sass/style.scss */
 .sidebar-wrapper .sidebar-item a {
   padding: 15px;
   display: block;
@@ -101,46 +152,51 @@ nav {
   width: 100%;
   text-decoration: none;
 }
-/* line 97, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 .sidebar-wrapper .sidebar-item a:hover {
   color: #fff !important;
   background-color: #368CCE;
 }
 
-/* line 105, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 .page-content-wrapper {
   width: 100%;
 }
 
-/* line 109, ../sass/style.scss */
+/* line 156, ../sass/style.scss */
 .wrapper {
   padding-left: 250px;
-  overflow: hidden;
 }
 
-/* line 114, ../sass/style.scss */
+/* line 160, ../sass/style.scss */
 .middle-area {
   background-color: #fff;
   min-height: 200px;
-  border: solid 1px #b3b3b3;
+  border: solid 1px #cecece;
+  box-shadow: 2px 2px rgba(90, 90, 90, 0.1);
 }
 
-/* line 120, ../sass/style.scss */
+/* line 167, ../sass/style.scss */
 .deals-heading {
   background-color: #f9f9f9;
 }
 
-/* line 123, ../sass/style.scss */
+/* line 170, ../sass/style.scss */
 .panel-deals {
   margin: 20px;
 }
 
-/* line 127, ../sass/style.scss */
+/* line 174, ../sass/style.scss */
 .table-profile > tbody > tr > td {
   border: none;
 }
 
-/* line 130, ../sass/style.scss */
+/* line 177, ../sass/style.scss */
 .table-profile {
   margin: 10px;
+}
+
+/* line 181, ../sass/style.scss */
+.deals {
+  height: 50px;
 }

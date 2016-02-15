@@ -1,5 +1,6 @@
 // Declared variables
 $border-color:  #b3b3b3;
+$light-border-color: #CECECE;
 $light-background-color: #f9f9f9;
 $header-background: #999999;
 
@@ -28,6 +29,7 @@ nav {
   margin: 0px;
   border-radius: 0px;
   a {
+    font-weight: bold;
     color: #fff;
   }
 }
@@ -36,14 +38,58 @@ nav {
   background-color: rgba(255, 255, 255, .2);
 }
 
-.navbar-brand > a {
+.navbar-brand {
   height: 48px;
-  text-indent: -9000px;
+  width: 122px;
   overflow: hidden;
   display: block;
   color: #fff;
   background: url("/images/pipedrive_logo.png") 12px 12px no-repeat!important;
   background-size: 106px 24px;
+}
+
+.user-img {
+  height: 48px;
+  width: 48px;
+  display: block;
+  float:left;
+  background: url("/images/user.png") no-repeat!important;
+}
+
+.icon-deals {
+  height: 48px;
+  width: 48px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  background: url("/images/connection.png") no-repeat!important;
+}
+
+.icon-activities {
+  height: 48px;
+  width: 48px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  background: url("/images/calendar.png") no-repeat!important;
+}
+
+.icon-cube {
+  height: 48px;
+  width: 48px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  background: url("/images/cube.png") no-repeat!important;
+}
+
+.icon-profile {
+  height: 48px;
+  width: 48px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  background: url("/images/user.png") no-repeat!important;
 }
 
 .page-content-wrapper {
@@ -70,7 +116,8 @@ nav {
   position: fixed;
   height: 100%;
   z-index: 1000;
-  border-right: solid 1px gray;
+  border-right: solid 1px $light-border-color;
+  box-shadow: 1px 0px rgba(90, 90, 90, .1);
 
   .sidebar-nav {
     position: absolute;
@@ -108,13 +155,13 @@ nav {
 
 .wrapper {
   padding-left: 250px;
-  overflow: hidden;
 }
 
 .middle-area {
   background-color: #fff;
   min-height: 200px;
-  border: solid 1px $border-color;
+  border: solid 1px $light-border-color;
+  box-shadow: 2px 2px rgba(90, 90, 90, .1);
 }
 
 .deals-heading {
@@ -124,9 +171,13 @@ nav {
   margin: 20px;
 }
 
-.table-profile>tbody>tr>td{
+.table-profile>tbody>tr>td {
   border: none;
 }
 .table-profile {
   margin: 10px;
+}
+
+.deals {
+  height: 50px;
 }
