@@ -66,14 +66,26 @@ pre {
 }
 
 /* line 73, ../sass/style.scss */
+.nav-collapse, .nav-collapse.collapse {
+  overflow: visible;
+}
+
+/* line 76, ../sass/style.scss */
+.navbar .btn-navbar {
+  display: none;
+}
+
+/* line 80, ../sass/style.scss */
 body {
   margin: 0px;
   padding: 0px;
   border: none;
-  background: url("/images/blankbackground.png");
+  min-width: 780px;
+  overflow: auto;
+  background: url("../../images/blankbackground.png");
 }
 
-/* line 80, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 nav {
   position: relative;
   z-index: 97;
@@ -86,7 +98,13 @@ nav {
   border: none;
 }
 
-/* line 92, ../sass/style.scss */
+/* line 101, ../sass/style.scss */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* line 106, ../sass/style.scss */
 .background-logo {
   position: absolute;
   width: 800px;
@@ -94,55 +112,56 @@ nav {
   left: 15%;
   top: 15%;
   z-index: -1;
-  background: url("/images/background.png");
+  max-width: 80%;
+  background: url("../../images/background.png");
 }
 
-/* line 103, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 .navbar {
   height: 48px;
   margin: 0px;
   border-radius: 0px;
   overflow: hidden;
 }
-/* line 108, ../sass/style.scss */
+/* line 123, ../sass/style.scss */
 .navbar .container-fluid {
   padding-right: 0px;
 }
-/* line 111, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 .navbar a {
   font-weight: bold;
   color: #fff;
 }
 
-/* line 117, ../sass/style.scss */
+/* line 132, ../sass/style.scss */
 .nav > li > a:hover {
   background-color: rgba(255, 255, 255, 0.2);
   transition: background-color 0.2s ease;
 }
 
-/* line 121, ../sass/style.scss */
+/* line 136, ../sass/style.scss */
 .nav > li > a:focus {
   background-color: #26292c;
 }
 
-/* line 124, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
   background-color: #26292c;
   border-color: #26292c;
 }
 
-/* line 129, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 .navbar-brand {
   height: 48px;
   width: 122px;
   overflow: hidden;
   display: block;
   color: #fff;
-  background: url("/images/pipedrive_logo.png") 12px 12px no-repeat !important;
+  background: url("../../images/pipedrive_logo.png") 12px 12px no-repeat !important;
   background-size: 106px 24px;
 }
 
-/* line 139, ../sass/style.scss */
+/* line 154, ../sass/style.scss */
 .user-img {
   margin-top: -15px;
   height: 48px;
@@ -150,10 +169,10 @@ nav {
   display: block;
   float: left;
   margin-right: 2px;
-  background: url("/images/user.png") center no-repeat !important;
+  background: url("../../images/user.png") center no-repeat !important;
 }
 
-/* line 149, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 .icon-deals {
   margin-top: -15px;
   height: 48px;
@@ -161,10 +180,10 @@ nav {
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/connection.png") center no-repeat !important;
+  background: url("../../images/connection.png") center no-repeat !important;
 }
 
-/* line 159, ../sass/style.scss */
+/* line 174, ../sass/style.scss */
 .icon-activities {
   margin-top: -15px;
   height: 48px;
@@ -172,10 +191,10 @@ nav {
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/calendar.png") center no-repeat !important;
+  background: url("../../images/calendar.png") center no-repeat !important;
 }
 
-/* line 169, ../sass/style.scss */
+/* line 184, ../sass/style.scss */
 .icon-cube {
   margin-top: -15px;
   height: 48px;
@@ -183,10 +202,10 @@ nav {
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/cube.png") center no-repeat !important;
+  background: url("../../images/cube.png") center no-repeat !important;
 }
 
-/* line 179, ../sass/style.scss */
+/* line 194, ../sass/style.scss */
 .icon-profile {
   margin-top: -15px;
   height: 48px;
@@ -194,32 +213,32 @@ nav {
   display: block;
   overflow: hidden;
   float: left;
-  background: url("/images/user.png") center no-repeat !important;
+  background: url("../../images/user.png") center no-repeat !important;
 }
 
-/* line 190, ../sass/style.scss */
+/* line 205, ../sass/style.scss */
 .content-container-header {
   height: 58px;
 }
 
-/* line 194, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 .company-name {
   display: block;
 }
 
-/* line 198, ../sass/style.scss */
+/* line 213, ../sass/style.scss */
 .sidebar-wrapper {
   margin-left: -250px;
   left: 250px;
   width: 250px;
   background: #fff;
-  position: fixed;
-  height: 100%;
+  position: absolute;
+  min-height: calc(100% - 50px);
   z-index: 1000;
   border-right: solid 1px #cecece;
   box-shadow: 1px 0px rgba(90, 90, 90, 0.1);
 }
-/* line 209, ../sass/style.scss */
+/* line 224, ../sass/style.scss */
 .sidebar-wrapper .sidebar-nav {
   position: absolute;
   top: 0;
@@ -228,7 +247,7 @@ nav {
   margin: 0;
   padding: 0;
 }
-/* line 218, ../sass/style.scss */
+/* line 233, ../sass/style.scss */
 .sidebar-wrapper .sidebar-item {
   background-color: #f9f9f9;
   border-bottom: solid 1px #b3b3b3;
@@ -236,7 +255,7 @@ nav {
   color: #000;
   word-wrap: break-word;
 }
-/* line 224, ../sass/style.scss */
+/* line 239, ../sass/style.scss */
 .sidebar-wrapper .sidebar-item a {
   padding: 10px;
   display: block;
@@ -245,7 +264,7 @@ nav {
   width: 100%;
   text-decoration: none;
 }
-/* line 232, ../sass/style.scss */
+/* line 247, ../sass/style.scss */
 .sidebar-wrapper .sidebar-item a:hover {
   color: #fff !important;
   background: #4CA2DE;
@@ -261,21 +280,22 @@ nav {
   transition: background-color 0.5s ease;
 }
 
-/* line 245, ../sass/style.scss */
+/* line 260, ../sass/style.scss */
 .page-content-wrapper {
   width: 100%;
 }
-/* line 247, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 .page-content-wrapper .container {
   margin-left: 30px;
+  width: calc(100% - 60px);
 }
 
-/* line 252, ../sass/style.scss */
+/* line 268, ../sass/style.scss */
 .wrapper {
   padding-left: 250px;
 }
 
-/* line 256, ../sass/style.scss */
+/* line 272, ../sass/style.scss */
 .middle-area {
   background-color: #fff;
   min-height: 200px;
@@ -283,50 +303,50 @@ nav {
   box-shadow: 0px 2px rgba(90, 90, 90, 0.2);
 }
 
-/* line 263, ../sass/style.scss */
+/* line 279, ../sass/style.scss */
 .deals-heading {
   background-color: #f9f9f9;
 }
 
-/* line 266, ../sass/style.scss */
+/* line 282, ../sass/style.scss */
 .panel-deals {
   margin: 20px;
 }
 
-/* line 270, ../sass/style.scss */
+/* line 286, ../sass/style.scss */
 .table-profile > tbody > tr > td {
   border: none;
 }
 
-/* line 273, ../sass/style.scss */
+/* line 289, ../sass/style.scss */
 .table-profile {
   margin: 10px;
 }
 
-/* line 277, ../sass/style.scss */
+/* line 293, ../sass/style.scss */
 .deals {
   height: 50px;
 }
 
-/* line 281, ../sass/style.scss */
+/* line 297, ../sass/style.scss */
 .dropdown-toggle {
   height: 50px;
 }
 
-/* line 285, ../sass/style.scss */
+/* line 301, ../sass/style.scss */
 .company-name {
   font-size: 11px;
   color: #c2c8cd;
 }
 
-/* line 290, ../sass/style.scss */
+/* line 306, ../sass/style.scss */
 .user-info {
   margin-left: 50px;
   margin-right: 10px;
   margin-top: -10px;
 }
 
-/* line 296, ../sass/style.scss */
+/* line 312, ../sass/style.scss */
 .caret {
   position: absolute;
   right: 5px;
@@ -334,18 +354,18 @@ nav {
   color: #c2c8cd;
 }
 
-/* line 303, ../sass/style.scss */
+/* line 319, ../sass/style.scss */
 .sidebar-company {
   color: gray;
   display: block;
 }
 
-/* line 308, ../sass/style.scss */
+/* line 324, ../sass/style.scss */
 .table-striped {
   box-shadow: 2px 2px rgba(90, 90, 90, 0.2);
 }
 
-/* line 312, ../sass/style.scss */
+/* line 328, ../sass/style.scss */
 .current-date {
   float: left;
   color: #000;
@@ -354,7 +374,7 @@ nav {
   text-align: center;
 }
 
-/* line 320, ../sass/style.scss */
+/* line 336, ../sass/style.scss */
 .notifications {
   margin-top: -34px;
   margin-left: 29px;
@@ -367,7 +387,15 @@ nav {
   text-align: center;
   font-size: 10;
 }
-/* line 331, ../sass/style.scss */
+/* line 347, ../sass/style.scss */
 .notifications .notifications-number {
   color: #fff;
+}
+
+/* line 353, ../sass/style.scss */
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
 }
