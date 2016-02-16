@@ -193,8 +193,11 @@ nav {
   width: 48px;
   display: block;
   float: left;
-  margin-right: 2px;
-  background: url("../../images/user.png") center no-repeat !important;
+  border: none;
+  background: url("../../images/userimage.jpg");
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
 
 .icon-deals {
@@ -352,7 +355,7 @@ nav {
 }
 
 .user-info {
-  margin-left: 50px;
+  margin-left: 55px;
   margin-right: 10px;
   margin-top: -10px;
 }

@@ -1,5 +1,7 @@
+window.App = {};
+window.App.events = _.extend({}, Backbone.Events);
+
 var User = Backbone.Model.extend();
-_.extend(User, Backbone.Events);
 
 var Users = Backbone.Collection.extend({
   model: User,
@@ -29,7 +31,11 @@ var UsersView = Backbone.View.extend({
 
   clicked: function(e) {
     var id = $(e.currentTarget).data("id");
-    console.log(id);
+    var models = this.collection.models;
+    var userModel = _.find(models, function(m) {
+      return m.id == id;
+    });
+    App.events.trigger("user-selected", userModel.attributes);
   },
 
   template: _.template($("#usersTemplate").html()),
@@ -39,6 +45,25 @@ var UsersView = Backbone.View.extend({
   }
 });
 
+var ProfileView = Backbone.View.extend({
+  model: User,
+
+  initialize: function() {
+    App.events.on("user-selected", function(user) {
+      console.log(user);
+      this.render(user);
+    }, this);
+  },
+
+  render: function(user) {
+    $(this.el).html(this.template({ user: user }));
+  }
+});
+
 var users = new UsersView({
   el: $("#users-list")
+});
+
+var profile = new ProfileView({
+  el: $("#profile-view")
 });
