@@ -12,13 +12,13 @@
 <!--Backbone templates -->
 
 
-<script type="text/template" id="usersTemplate">
-  <% _.each(users, function (user) { %>
+  <script type="text/template" id="usersTemplate">
+    <% _.each(users, function (user) { %>
       <div class=<%= user.id == selectedUserId ? "user active" : "user" %> data-id=<%= user.id %>>
       <li class="sidebar-item"><a><b><span class="username"></span><%= user.name %></b><span class="sidebar-company">Amet</span></a></li>
       </div>
     <% }); %>
-    </script>
+  </script>
 
     <script type="text/template" id="profileTemplate">
       <% user %>
@@ -72,6 +72,14 @@
                             <th><h4 align="right">sum</h4></th>
                           </tr>
                           <tbody id="deals-list">
+                            <% _.each(deals, function (deal) { %>
+                              <div class="" data-id=<%= deal.id %>>
+                                <tr>
+                                  <td><h3><%= deal.title %></h3></td>
+                                  <td><h3 align="right"><%= deal.formatted_value %></h3></td>
+                                </tr>
+                              </div>
+                            <% }); %>
                           </tbody>
                         </table>
                       </div>
@@ -83,18 +91,6 @@
           </div>
         </div>
       </script>
-
-      <script type="text/template" id="dealsTemplate">
-        <% _.each(deals, function (deal) { %>
-          <div class="" data-id=<%= deal.id %>>
-            <tr>
-              <td><h3><%= deal.title %></h3></td>
-              <td><h3 align="right"><%= deal.formatted_value %></h3></td>
-            </tr>
-          </div>
-          <% }); %>
-        </script>
-
 
       <nav class="navbar"><!--Navbar starts-->
         <div class="container-fluid">
@@ -114,8 +110,8 @@
                 <a class="deals" href="#">
                   <span class="icon-activities"></span>
                   <span>Activities</span>
-                  <span class="current-date">20</span>
-                  <div class="notifications">17</div>
+                  <span class="current-date">18</span>
+                  <div class="notifications">2</div>
                 </a>
               </li>
               <li>
