@@ -11,7 +11,9 @@ var Router = Backbone.Router.extend({
 window.App.router = new Router();
 
 window.App.router.on("route:getProfile", function(id) {
-  console.log("get profile: " + id);
+  App.selectedUserId = id;
+  console.log("selectedUserId: " + App.selectedUserId);
+  console.log("Route:getProfile: " + id);
 });
 
 Backbone.history.start();
@@ -30,8 +32,8 @@ var Users = Backbone.Collection.extend({
 var UsersView = Backbone.View.extend({
   model: User,
   initialize: function() {
-    this.collection = new Users;
 
+    this.collection = new Users;
     var that = this;
     this.collection.fetch({
       success: function() {
@@ -51,6 +53,8 @@ var UsersView = Backbone.View.extend({
       return m.id == id;
     });
     var user = userModel.attributes;
+    App.selectedUserId = user.id;
+    console.log(App.selectedUserId);
     App.events.trigger("user-selected", user);
     App.router.navigate("profile/" + user.id);
   },
@@ -58,7 +62,10 @@ var UsersView = Backbone.View.extend({
   template: _.template($("#usersTemplate").html()),
 
   render: function() {
-    $(this.el).html(this.template({ users: this.collection.toJSON() }));
+    $(this.el).html(this.template({ users: this.collection.toJSON(),
+      selectedUserId: App.selectedUserId }));
+    console.log(App);
+    console.log("rendering selectedUserId:  " + App.selectedUserId);
   }
 });
 
@@ -89,7 +96,7 @@ var DealsView = Backbone.View.extend({
   template: _.template($("#dealsTemplate").html()),
 
   render: function() {
-    $(this.el).html(this.template({ users: this.collection.toJSON() }));
+    $(this.el).html(this.template({ deals: this.collection.toJSON() }));
   }
 });
 

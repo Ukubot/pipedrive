@@ -11,24 +11,14 @@
 
 <!--Backbone templates -->
 
-  <script type="text/template" id="usersTemplate">
-    <% _.each(users, function (user) { %>
-      <div class="user" data-id=<%= user.id %>>
-        <li class="sidebar-item"><a><b><span class="username"></span><%= user.name %></b><span class="sidebar-company">Amet</span></a></li>
-      </div>
-      <% }); %>
-    </script>
 
-    <script type="text/template" id="dealsTemplate">
-      <% _.each(deals, function (deal) { %>
-        <div class="deals">
-          <tr>
-            <td><h3><%= deal.title %></h3></td>
-            <td><h3><%= deal.organization.value %></h3></td>
-          </tr>
-        </div>
-        <% }); %>
-      </script>
+<script type="text/template" id="usersTemplate">
+  <% _.each(users, function (user) { %>
+      <div class=<%= user.id == selectedUserId ? "user active" : "user" %> data-id=<%= user.id %>>
+      <li class="sidebar-item"><a><b><span class="username"></span><%= user.name %></b><span class="sidebar-company">Amet</span></a></li>
+      </div>
+    <% }); %>
+    </script>
 
     <script type="text/template" id="profileTemplate">
       <% user %>
@@ -73,15 +63,16 @@
                       </table>
                     </div>
                   </div>
-
                   <div class="profile-deals">
                     <div class="col-lg-6">
                       <div class="panel panel-default panel-deals">
-                        <table class="table table-striped" id="deals-list">
+                        <table class="table table-striped">
                           <tr class="deals-heading">
                             <th><h4>Title </h4></th>
                             <th><h4 align="right">sum</h4></th>
                           </tr>
+                          <tbody id="deals-list">
+                          </tbody>
                         </table>
                       </div>
                     </div>
@@ -93,6 +84,16 @@
         </div>
       </script>
 
+      <script type="text/template" id="dealsTemplate">
+        <% _.each(deals, function (deal) { %>
+          <div class="" data-id=<%= deal.id %>>
+            <tr>
+              <td><h3><%= deal.title %></h3></td>
+              <td><h3 align="right"><%= deal.formatted_value %></h3></td>
+            </tr>
+          </div>
+          <% }); %>
+        </script>
 
 
       <nav class="navbar"><!--Navbar starts-->
@@ -161,8 +162,11 @@
               </ul>
             </div><!--sidebar-end-->
             <div class="page-content-wrapper" id="profile-view">
-              <div class="background-logo">
-              </div>
+              <!--profile-deals-->
+
+
+              <!--profile-deals-end-->
+              <div class="background-logo"></div>
             </div><!--page-content-end-->
           </div><!--row-end-->
         </div><!--wrapper-end-->
