@@ -60,6 +60,18 @@
                           <td><h3><b>Open deals</b></h3></td>
                           <td><h3><%= user.created %></h3></td>
                         </tr>
+                        <tr id="deals-list">
+                          <td><h3><b>Last Activity</b></h3></td>
+                          <% _.each(deals, function (deal) { %>
+                            <div data-id=<%= deal.id %>>
+                          <td><h3 align="right"><%= deal.next_activity_date %></h3></td>
+                            </div>
+                        </tr>
+                        <tr>
+                          <td><h3><b>Last activity</b></h3></td>
+                          <td><h3><%= deal.last_activity_date %></h3></td>
+                          <% }); %>
+                        </tr>
                       </table>
                     </div>
                   </div>
@@ -77,6 +89,8 @@
                                 <tr>
                                   <td><h3><%= deal.title %></h3></td>
                                   <td><h3 align="right"><%= deal.formatted_value %></h3></td>
+                                    <td><h3 align="right"><%= deal.next_activity_date %></h3></td>
+
                                 </tr>
                               </div>
                             <% }); %>
@@ -110,7 +124,7 @@
                 <a class="deals" href="#">
                   <span class="icon-activities"></span>
                   <span>Activities</span>
-                  <span class="current-date">18</span>
+                  <span class="current-date" id="currentDate"></span>
                   <div class="notifications">2</div>
                 </a>
               </li>

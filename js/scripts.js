@@ -106,9 +106,7 @@ var ProfileView = Backbone.View.extend({
 
   render: function() {
     var user = this.user;
-    if(this.user != user) {
-      return;
-    };
+    if (!user) return;
     var deals = App.deals;
     $(this.el).html(this.template({
       user: user.toJSON(),
@@ -124,3 +122,6 @@ var users = new UsersView({
 var profile = new ProfileView({
   el: $("#profile-view")
 });
+
+
+document.getElementById("currentDate").innerHTML = new Date().getDate();
