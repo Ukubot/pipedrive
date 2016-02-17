@@ -3,7 +3,8 @@ window.App.events = _.extend({}, Backbone.Events);
 
 var Router = Backbone.Router.extend({
   routes: {
-    "profile/:id": "getProfile"
+    "profile/:id": "getProfile",
+    '': 'index'
   }
 });
 
@@ -51,7 +52,7 @@ var UsersView = Backbone.View.extend({
     });
     var user = userModel.attributes;
     App.events.trigger("user-selected", user);
-    App.router.navigate("/profile/" + user.id);
+    App.router.navigate("profile/" + user.id);
   },
 
   template: _.template($("#usersTemplate").html()),
