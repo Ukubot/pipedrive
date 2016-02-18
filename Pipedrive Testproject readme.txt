@@ -1,4 +1,4 @@
-The project took about 17 hours of coding. Estimated was about 25h.
+The project took about 20 hours of coding. Estimated was about 25h.
 Time for just reading and learning libraries is not included.
 
 The time distributed as such:
@@ -10,7 +10,8 @@ The time distributed as such:
 57 min - making the page dynamic
 1h 8min - connecting backbone to project
 30 min - testing out backbone
-7 h - backbone connections to Pipedrive API
+10 h - backbone connections to Pipedrive API and handling the data.
+
 
 As seen from the list, most of the time was spent connecting pipedrive with
 backbone. As I had never worked with backbone before, some of the code may be
@@ -22,7 +23,9 @@ I assume it can be fetched through company_ID then. I was also not sure how to g
 users "Deals" without having their key, so the deals part only shows one user's deals.
 
 The first half of the task was not difficult for me. The second half got a bit trickier and
-I had to read up a lot more and watch tutorials. Doesn't mean I didn't like it.
+I had to read up a lot more and watch tutorials. Doesn't mean I didn't like it. At many
+points I understood how to improve the data output accuracy by filtering and combining, but trying to implement it took too much
+time for it to be practical.
 The hardest part for me was working the Pipedrive data with backbone.
 The easiest part for me was creating the main Interface.
 

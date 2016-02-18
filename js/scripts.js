@@ -8,9 +8,21 @@ var Deals = Backbone.Collection.extend({
   }
 });
 
+var Person = Backbone.Model.extend();
+
+var Persons = Backbone.Collection.extend({
+  model: Person,
+  url: "https://api.pipedrive.com/v1/persons?start=0&api_token=678ff83eb61acc57410ea663bbcbf25b651d787c",
+  parse: function(response) {
+    return response.data;
+  }
+});
+
 var App = {
-  deals: new Deals()
+  deals: new Deals(),
+  persons: new Persons()
 };
+
 App.events = _.extend({}, Backbone.Events);
 
 App.deals.fetch({
@@ -19,27 +31,12 @@ App.deals.fetch({
   }
 });
 
-
-var Person = Backbone.Model.extend();
-var Persons = Backbone.Collection.extend({
-  model: Person,
-  url: "https://api.pipedrive.com/v1/persons?start=0&api_token=678ff83eb61acc57410ea663bbcbf25b651d787c",
-  parse: function(response) {
-    return response.data;
-    console.log(Persons)
-  }
-});
-
-var App = {
-  persons: new Persons()
-};
-App.events = _.extend({}, Backbone.Events);
-
 App.persons.fetch({
   success: function(persons) {
     App.events.trigger("persons-loaded", persons);
   }
 });
+
 
 var Router = Backbone.Router.extend({
   routes: {
@@ -123,10 +120,10 @@ var ProfileView = Backbone.View.extend({
       this.render();
     }, this);
 
-  App.events.on("persons-loaded", function(persons) {
-    this.render();
-  }, this);
-},
+    App.events.on("persons-loaded", function(persons) {
+      this.render();
+    }, this);
+  },
 
   template: _.template($("#profileTemplate").html()),
 
@@ -135,10 +132,13 @@ var ProfileView = Backbone.View.extend({
     if (!user) return;
     var persons = App.persons;
     var deals = App.deals;
+
+var totalDealsCount = persons.reduce(function(s, person) { return s + person.get("open_deals_count"); }, 0);
     $(this.el).html(this.template({
       user: user.toJSON(),
       persons: persons.toJSON(),
-      deals: deals.toJSON()
+      deals: deals.toJSON(),
+      totalDealsCount: totalDealsCount
     }));
   }
 });
@@ -151,6 +151,5 @@ var users = new UsersView({
 var profile = new ProfileView({
   el: $("#profile-view")
 });
-
 
 document.getElementById("currentDate").innerHTML = new Date().getDate();
