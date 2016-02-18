@@ -20,6 +20,27 @@ App.deals.fetch({
 });
 
 
+var Person = Backbone.Model.extend();
+var Persons = Backbone.Collection.extend({
+  model: Person,
+  url: "https://api.pipedrive.com/v1/persons?start=0&api_token=678ff83eb61acc57410ea663bbcbf25b651d787c",
+  parse: function(response) {
+    return response.data;
+    console.log(Persons)
+  }
+});
+
+var App = {
+  persons: new Persons()
+};
+App.events = _.extend({}, Backbone.Events);
+
+App.persons.fetch({
+  success: function(persons) {
+    App.events.trigger("persons-loaded", persons);
+  }
+});
+
 var Router = Backbone.Router.extend({
   routes: {
     "profile/:id": "getProfile",
@@ -54,6 +75,7 @@ var UsersView = Backbone.View.extend({
     this.collection.fetch({
       success: function(collection) {
         var user = collection.get(App.selectedUserId);
+
         if (user) {
           App.events.trigger("user-selected", user);
         }
@@ -100,20 +122,27 @@ var ProfileView = Backbone.View.extend({
     App.events.on("deals-loaded", function(deals) {
       this.render();
     }, this);
-  },
+
+  App.events.on("persons-loaded", function(persons) {
+    this.render();
+  }, this);
+},
 
   template: _.template($("#profileTemplate").html()),
 
   render: function() {
     var user = this.user;
     if (!user) return;
+    var persons = App.persons;
     var deals = App.deals;
     $(this.el).html(this.template({
       user: user.toJSON(),
+      persons: persons.toJSON(),
       deals: deals.toJSON()
     }));
   }
 });
+
 
 var users = new UsersView({
   el: $("#users-list")

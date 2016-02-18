@@ -9,67 +9,75 @@
 <body>
 
 
-  <!--Backbone templates -->
+<!--Backbone templates -->
 
 
   <script type="text/template" id="usersTemplate">
     <% _.each(users, function (user) { %>
       <div class=<%= user.id == selectedUserId ? "user active" : "user" %> data-id=<%= user.id %>>
-        <li class="sidebar-item"><a><b><span class="username"></span><%= user.name %></b><span class="sidebar-company">Amet</span></a></li>
+      <li class="sidebar-item"><a><b><span class="username"></span><%= user.name %></b><span class="sidebar-company">Homeboiz</span></a></li>
       </div>
-      <% }); %>
-    </script>
+    <% }); %>
+  </script>
 
     <script type="text/template" id="profileTemplate">
       <% user %>
-      <div class="user" data-id=<%= user.id %>>
-        <div class="page content">
-          <div class="container">
-            <div class="row">
-              <div class="content-container-header">
-                <div class="profile-info">
-                  <div class="col-lg-6">
-                    <h1><b><%= user.name %></b></h1>
+        <div class="user" data-id=<%= user.id %>>
+          <div class="page content">
+            <div class="container">
+              <div class="row">
+                <div class="content-container-header">
+                  <div class="profile-info">
+                    <div class="col-lg-6">
+                      <h1><b><%= user.name %></b></h1>
+                    </div>
                   </div>
-                </div>
-                <div class="profile-info">
-                  <div class="col-lg-6 hidden-md hidden-sm hidden-xs">
-                    <h1>Deals</h1>
+                  <div class="profile-info">
+                    <div class="col-lg-6 hidden-md hidden-sm hidden-xs">
+                      <h1>Deals</h1>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="middle-area">
-              <div class="row">
-                <div class="profile-info">
-                  <div class="col-lg-6">
-                    <table class="table table-profile">
-                      <tr>
-                        <td><h3><b>Phone</b></h3></td>
-                        <td><h3><%= user.phone %></h3></td>
-                      </tr>
-                      <tr>
-                        <td><h3><b>E-mail</b></h3></td>
-                        <td><h3><%= user.email %></h3></td>
-                      </tr>
-                      <tr>
-                        <td><h3><b>Added</b></h3></td>
-                        <td><h3><%= user.created %></h3></td>
-                      </tr>
-                      <tr>
-                        <td><h3><b>Open deals</b></h3></td>
-                        <td><h3><%= user.created %></h3></td>
-                      </tr>
-                      <tr id="deals-list">
-                        <td><h3><b>Last Activity</b></h3></td>
-                        <% _.each(deals, function (deal) { %>
-                          <div data-id=<%= deal.id %>>
-                            <td><h3 align="right"><%= deal.next_activity_date %></h3></td>
+              <div class="middle-area">
+                <div class="row">
+                  <div class="profile-info">
+                    <div class="col-lg-6">
+                      <table class="table table-profile">
+                        <tr>
+                          <td><h3><b>Phone</b></h3></td>
+                          <td><h3><%= user.phone %></h3></td>
+                        </tr>
+                        <tr>
+                          <td><h3><b>E-mail</b></h3></td>
+                          <td><h3><%= user.email %></h3></td>
+                        </tr>
+                        <tr>
+                          <td><h3><b>Added</b></h3></td>
+                          <td><h3><%= user.created %></h3></td>
+                        </tr>
+                        <tr>
+                          <td><h3><b>Open deals</b></h3></td>
+                          <% _.each(persons, function (person) { %>
+                            <div data-id=<%= person.id %>>
+                          <td><h3><%= person.open_deals_count %></h3></td>
                           </div>
+                          <% }); %>
+                        </tr>
+                        <tr>
+                          <td><h3><b>Next activity</b></h3></td>
+                          <% _.each(persons, function (person) { %>
+                            <div data-id=<%= person.id %>>
+                          <td><h3><%= person.next_activity_date %></h3></td>
+                          </div>
+                          <% }); %>
                         </tr>
                         <tr>
                           <td><h3><b>Last activity</b></h3></td>
-                          <td><h3><%= deal.last_activity_date %></h3></td>
+                          <% _.each(persons, function (person) { %>
+                            <div data-id=<%= person.id %>>
+                          <td><h3><%= person.last_activity_date %></h3></td>
+                          </div>
                           <% }); %>
                         </tr>
                       </table>
@@ -91,10 +99,9 @@
                                   <td><h3 align="right"><%= deal.formatted_value %></h3></td>
                                 </tr>
                               </div>
-                              <% }); %>
-                            </tbody>
-                          </table>
-                        </div>
+                            <% }); %>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </div>
@@ -102,89 +109,90 @@
               </div>
             </div>
           </div>
-        </script>
+        </div>
+      </script>
 
-        <nav class="navbar"><!--Navbar starts-->
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#"></a>
-            </div>
+      <nav class="navbar"><!--Navbar starts-->
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a>
+          </div>
 
-            <div class="navbar">
-              <ul class="nav navbar-nav">
-                <li>
-                  <a class="deals" href="#">
-                    <span class="icon-deals"></span>
-                    <span>Deals</span>
+          <div class="navbar">
+            <ul class="nav navbar-nav">
+              <li>
+                <a class="deals" href="#">
+                  <span class="icon-deals"></span>
+                  <span>Deals</span>
+                </a>
+              </li>
+              <li>
+                <a class="deals" href="#">
+                  <span class="icon-activities"></span>
+                  <span>Activities</span>
+                  <span class="current-date" id="currentDate"></span>
+                  <div class="notifications">2</div>
+                </a>
+              </li>
+              <li>
+                <a class="deals" href="#">
+                  <span class="icon-cube"></span>
+                </a>
+              </li>
+              <li>
+                <a class="deals" href="#">
+                  <span class="icon-profile"></span>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="user-img"></span>
+
+                  <div class="user-info">
+                    <span class="username">Kasutaja<span>
+                      <span class="company-name">Firma</span>
+                    </div>
+                    <span class="caret"></span>
                   </a>
-                </li>
-                <li>
-                  <a class="deals" href="#">
-                    <span class="icon-activities"></span>
-                    <span>Activities</span>
-                    <span class="current-date" id="currentDate"></span>
-                    <div class="notifications">2</div>
-                  </a>
-                </li>
-                <li>
-                  <a class="deals" href="#">
-                    <span class="icon-cube"></span>
-                  </a>
-                </li>
-                <li>
-                  <a class="deals" href="#">
-                    <span class="icon-profile"></span>
-                  </a>
+
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
                 </li>
               </ul>
-
-              <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <span class="user-img"></span>
-
-                    <div class="user-info">
-                      <span class="username">Kasutaja<span>
-                        <span class="company-name">Firma</span>
-                      </div>
-                      <span class="caret"></span>
-                    </a>
-
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
             </div>
-          </nav><!--Navbar end-->
+          </div>
+        </nav><!--Navbar end-->
 
-          <div class="wrapper"><!--whole page wrapper-->
-            <div class="row">
-              <div class="sidebar-wrapper"><!--sidebar-->
-                <ul class="sidebar-nav" id="users-list">
-                </ul>
-              </div><!--sidebar-end-->
-              <div class="page-content-wrapper" id="profile-view">
-                <!--profile-deals-->
+        <div class="wrapper"><!--whole page wrapper-->
+          <div class="row">
+            <div class="sidebar-wrapper"><!--sidebar-->
+              <ul class="sidebar-nav" id="users-list">
+              </ul>
+            </div><!--sidebar-end-->
+            <div class="page-content-wrapper" id="profile-view">
+              <!--profile-deals-->
 
 
-                <!--profile-deals-end-->
-                <div class="background-logo"></div>
-              </div><!--page-content-end-->
-            </div><!--row-end-->
-          </div><!--wrapper-end-->
+              <!--profile-deals-end-->
+              <div class="background-logo"></div>
+            </div><!--page-content-end-->
+          </div><!--row-end-->
+        </div><!--wrapper-end-->
 
-          <!--scripts-->
-          <script src="bower_components/jquery/dist/jquery.js"></script>
-          <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-          <script src="bower_components/underscore/underscore.js"></script>
-          <script src="bower_components/backbone/backbone.js"></script>
-          <script src="js/scripts.js"></script>
+        <!--scripts-->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/backbone/backbone.js"></script>
+        <script src="js/scripts.js"></script>
 
-        </body>
-        </html>
+      </body>
+      </html>
