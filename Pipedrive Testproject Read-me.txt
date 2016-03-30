@@ -1,0 +1,10 @@
+The time distributed as such:
+(Tracked with Toggle)
+35min - creating project base and installing components
+2h 40min - creating UI
+3h - polishing UI and tiny improvements
+1h 20 min - improving structure, cleaning code
+57 min - making the page dynamic
+1h 8min - connecting backbone to project
+30 min - testing out backbone
+10 h - backbone connections to Pipedrive API and handling the data.
